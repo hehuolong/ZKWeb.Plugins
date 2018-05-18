@@ -17,7 +17,8 @@ BootstrapDialog.showRemote = function (title, url, extendParameters) {
 	// 弹出模态框
 	BootstrapDialog.show($.extend({
 		type: "type-primary",
-		size: "size-fullscreen",
+		size: "size-wide",
+        //size: "size-fullscreen",
 		title: title,
 		message: $contents
 	}, extendParameters || {}));
@@ -26,8 +27,12 @@ BootstrapDialog.showRemote = function (title, url, extendParameters) {
 };
 
 /* 防止误关模态框 */
-BootstrapDialog.defaultOptions.closeByBackdrop = false;
-BootstrapDialog.defaultOptions.closeByKeyboard = false;
+//BootstrapDialog.defaultOptions.closeByBackdrop = false;
+//BootstrapDialog.defaultOptions.closeByKeyboard = false;
+
+/* 点击模块框外部关闭窗口，按ESC关闭窗口*/
+BootstrapDialog.defaultOptions.closeByBackdrop = true;
+BootstrapDialog.defaultOptions.closeByKeyboard = true;
 
 /* 设置关闭图标 */
 BootstrapDialog.defaultOptions.closeIcon = "<i class='fa fa-remove'></i>";
